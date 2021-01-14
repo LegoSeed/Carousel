@@ -2,32 +2,37 @@
   "name": "carousel",
   "version": "1.0.0",
   "description": "",
-  "main": "index.jsx",
+  "main": "./public/bundle.js",
   "scripts": {
     "start": "nodemon server",
     "build": "webpack",
     "watch": "webpack -w",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "report": "npm run test -- --coverage --watchAll=false"
   },
   "keywords": [],
-  "author": "Hack Reactor <curriculum.team@hackreactor.com>",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.20.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "jest": "^26.6.3",
     "jquery": "^3.5.1",
     "mongoose": "^5.11.11",
     "mysql": "^2.18.1",
     "react": "^16.14.0",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
+    "babel-jest": "^26.6.3",
     "babel-loader": "^8.1.0",
     "css-loader": "^5.0.1",
+    "enzyme-to-json": "^3.6.1",
     "eslint": "^7.17.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.22.1",
@@ -38,5 +43,19 @@
     "style-loader": "^2.0.0",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.jsx",
+      "src/**/*.js",
+      "!src/setupTest.js",
+      "!src/index.jsx"
+    ],
+    "coverageReporters": [
+      "text"
+    ]
   }
 }
