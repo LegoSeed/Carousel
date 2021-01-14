@@ -1,22 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './main.css';
-import axios from 'axios';
+// import axios from 'axios';
 
 class App extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.state = {};
   }
 
-
-  render () {
+  render() {
     return (
-    <div>
-      <h1>Recommended products</h1>
+      <div>
+        <h1>Recommended products</h1>
 
-    </div>
-    )
+      </div>
+    );
   }
 }
 
