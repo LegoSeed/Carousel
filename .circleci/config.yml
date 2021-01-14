@@ -3,11 +3,5 @@ orbs:
   node: circleci/node@3.0.0
 workflows:
   node-tests:
-   jobs:
-    test:
-      steps:
-    - checkout
-    - node/install-packages
-    - run:
-        name: 'use npm to run test/report'
-        command: npm run report
+    jobs:
+      - node/test
