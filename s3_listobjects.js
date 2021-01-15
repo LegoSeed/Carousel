@@ -52,6 +52,7 @@ const List = function ListofS3Objects(err, data) {
     }
     console.log(resultList);
     await Item.create(resultList).then(() => {
+      console.log('seed complete');
       process.exit(0);
     });
   }
@@ -71,7 +72,6 @@ const List = function ListofS3Objects(err, data) {
 
 Item.create(LegoArray)
   .then(() => { s3.getObject(bucketParams, List); })
-  .then(() => { console.log('seed complete'); })
   .catch((error) => {
     console.log(error);
   });
