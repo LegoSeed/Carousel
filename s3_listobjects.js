@@ -50,9 +50,13 @@ const List = function ListofS3Objects(err, data) {
       firstObj = { ...newObj, ...firstObj };
       resultList.push(firstObj);
     }
-    await Item.create(resultList);
+    console.log(resultList);
+    await Item.create(resultList).then(() => {
+      process.exit(0);
+    });
   }
   asyncList();
+  // process.exit(0);
   // if (err) {
   //   console.log('Error', err);
   // } else {
@@ -66,10 +70,8 @@ const List = function ListofS3Objects(err, data) {
 };
 
 Item.create(LegoArray)
-  .then(() => new Promise(() => {
-    s3.getObject(bucketParams, List);
-  }))
-  .then(() => { mongoose.disconnect(); console.log('seed complete'); })
+  .then(() => { s3.getObject(bucketParams, List); })
+  .then(() => { console.log('seed complete'); })
   .catch((error) => {
     console.log(error);
   });
