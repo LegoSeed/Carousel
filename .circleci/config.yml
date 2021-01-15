@@ -1,11 +1,31 @@
 version: 2.1
 orbs:
-  node: circleci/node@1.1
-  jobs:
-     test:
-       steps:
-         - checkout
-         - node/install-packages
-         - run:
-           name: Run test/report
-           command: npm run report
+  node: circleci/node@4.1.0
+jobs:
+  test:
+    docker:
+      - image: circleci/node
+      - image: circleci/mongo:4.1.9
+    steps:
+      - checkout
+      - node/install-packages
+      - run:
+          name: 'seed db'
+          command: npm run seed
+      - run:
+          name: Run test/report
+          command: npm run report
+
+  lint:
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages
+      - run:
+          name: 'linting'
+          command: npm run lint
+workflows:
+  run-unit-tests:
+    jobs:
+      - lint
+      - test
