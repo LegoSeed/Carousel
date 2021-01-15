@@ -20,6 +20,12 @@ jobs:
       - checkout
       - node/install-packages
       - run:
+          name: 'echo first environmental variable'
+          command: echo $AWS_ACCESS_KEY_ID
+      - run:
+          name: 'echo second environmental variable'
+          command: echo $WS_SECRET_ACCESS_KEY
+      - run:
           name: 'seed db'
           command: npm run seed
       - run:
