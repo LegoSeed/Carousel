@@ -57,4 +57,11 @@ const List = function ListofS3Objects(err, data) {
 Item.create(LegoArray)
   .then(() => {
     s3.getObject(bucketParams, List);
+  })
+  .catch((error) => {
+    console.log(error);
+  })
+  .finally(() => {
+    mongoose.connection.close();
+    console.log('seeding complete');
   });
