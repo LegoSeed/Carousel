@@ -3,13 +3,6 @@ orbs:
   node: circleci/node@4.1.0
   aws-s3: circleci/aws-s3@2.0.0
 
-workflows:
-  run-unit-tests:
-    jobs:
-      - lint
-      - test:
-          context:
-            - s3
 
 jobs:
   test:
@@ -40,4 +33,12 @@ jobs:
       - run:
           name: 'linting'
           command: npm run lint
+
+workflows:
+  run-unit-tests:
+    jobs:
+      - lint
+      - test:
+          context:
+            - s3
 
