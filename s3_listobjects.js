@@ -41,9 +41,7 @@ const bucketParams = {
 let listOfItems;
 
 const List = function ListofS3Objects(err, data) {
-  if (err) {
-    console.log('Error', err);
-  } else {
+  return new Promise(() => {
     listOfItems = JSON.parse(data.Body.toString());
     const newObj = { imageUrl: 's3://chuck3774bucket/dummyimage.com:382x382.jpg:5fa2dd:ffffff.webloc' };
     for (let i = 0; i < listOfItems.length; i += 1) {
@@ -51,13 +49,21 @@ const List = function ListofS3Objects(err, data) {
       firstObj = { ...newObj, ...firstObj };
       Item.create(firstObj);
     }
-  }
+  });
+  // if (err) {
+  //   console.log('Error', err);
+  // } else {
+  //   listOfItems = JSON.parse(data.Body.toString());
+  //   const newObj = { imageUrl: 's3://chuck3774bucket/dummyimage.com:382x382.jpg:5fa2dd:ffffff.webloc' };
+  //   for (let i = 0; i < listOfItems.length; i += 1) {
+  //     let firstObj = listOfItems[i];
+  //     firstObj = { ...newObj, ...firstObj };
+  //     Item.create(firstObj);
+  //   }
 };
 
 Item.create(LegoArray)
-  .then(() => {
-    s3.getObject(bucketParams, List);
-  })
+  .then(() => s3.getObject(bucketParams, List))
   .catch((error) => {
     console.log(error);
   })
