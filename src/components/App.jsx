@@ -11,7 +11,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Recommended products!</h1>
+        <h1>Recommended products</h1>
 
       </div>
     );
