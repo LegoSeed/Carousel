@@ -66,10 +66,10 @@ const List = function ListofS3Objects(err, data) {
 };
 
 Item.create(LegoArray)
-  .then(() => {
+  .then(() => new Promise(() => {
     s3.getObject(bucketParams, List);
-  })
-  // .then(() => { mongoose.disconnect(); console.log('seed complete'); })
+  }))
+  .then(() => { mongoose.disconnect(); console.log('seed complete'); })
   .catch((error) => {
     console.log(error);
   });
