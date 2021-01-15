@@ -10,9 +10,6 @@ jobs:
       - checkout
       - node/install-packages
       - run:
-          name: 'seed db'
-          command: npm run seed
-      - run:
           name: Run test/report
           command: npm run report
 
