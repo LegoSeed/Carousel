@@ -41,15 +41,18 @@ const bucketParams = {
 let listOfItems;
 
 const List = function ListofS3Objects(err, data) {
-  return new Promise(() => {
+  async function asyncList() {
     listOfItems = JSON.parse(data.Body.toString());
     const newObj = { imageUrl: 's3://chuck3774bucket/dummyimage.com:382x382.jpg:5fa2dd:ffffff.webloc' };
+    const resultList = [];
     for (let i = 0; i < listOfItems.length; i += 1) {
       let firstObj = listOfItems[i];
       firstObj = { ...newObj, ...firstObj };
-      Item.create(firstObj);
+      resultList.push(firstObj);
     }
-  });
+    await Item.create(resultList);
+  }
+  asyncList();
   // if (err) {
   //   console.log('Error', err);
   // } else {
@@ -63,7 +66,7 @@ const List = function ListofS3Objects(err, data) {
 };
 
 Item.create(LegoArray)
-  .then(() => s3.getObject(bucketParams, List))
+  .then(() => { s3.getObject(bucketParams, List); })
   .then(() => { mongoose.disconnect(); })
   .catch((error) => {
     console.log(error);
