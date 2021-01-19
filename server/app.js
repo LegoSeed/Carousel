@@ -1,10 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-const Item = require('./database.js');
+const Item = require('../database.js');
 
 const app = express();
-const PORT = 3001;
 app.use(cors());
 
 app.get('/items', (req, res) => {
@@ -14,8 +13,6 @@ app.get('/items', (req, res) => {
     });
 });
 
-app.use(express.static(path.join(__dirname, '.', 'public')));
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
-app.listen(PORT, () => {
-
-});
+module.exports = app;

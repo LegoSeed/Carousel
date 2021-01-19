@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component renders 1`] = `
+<div>
+  <h1>
+    Recommended products!
+  </h1>
+  <div />
+</div>
+`;
+
+exports[`App component renders App component 1`] = `
+<div>
+  <h1>
+    Recommended products!
+  </h1>
+  <div />
+</div>
+`;
