@@ -23,10 +23,12 @@ const LegoArray = [{
 }];
 
 describe('ProductList component', () => {
-  test('renders ProductList component', () => {
+  test('renders ProductList component', async (done) => {
+    jest.useFakeTimers();
     // eslint-disable-next-line react/jsx-filename-extension
-    const wrapper = shallow(<ProductList items={LegoArray} />);
+    const wrapper = await shallow(<ProductList items={LegoArray} />);
 
     expect(wrapper.exists()).toBe(true);
+    done();
   });
 });
