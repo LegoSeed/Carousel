@@ -1,14 +1,28 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { Card, Button } from 'react-bootstrap';
+import StarRatingComponent from 'react-star-rating-component';
 
 const Product = (props) => (
-  <div className="item">
-    <img src={props.item.imageUrl} alt="product" />
-    <div>{props.item.name}</div>
-    <div>{props.item.reviewScore}</div>
-    <div>{props.item.price}</div>
-    <button type="submit">Add to Bag</button>
-  </div>
+  <Card style={{ width: '18rem' }}>
+    <Card.Img variant="top" src={props.item.imageUrl} />
+    <Card.Body>
+      <Card.Title>{props.item.name}</Card.Title>
+      <Card.Text>
+        <StarRatingComponent
+          editing={false}
+          emptyStarColor="grey"
+          value={props.item.reviewScore / 20}
+        />
+      </Card.Text>
+      <Card.Text>
+        $
+        {props.item.price}
+        .99
+      </Card.Text>
+      <Button variant="primary">Add to Bag</Button>
+    </Card.Body>
+  </Card>
 
 );
 
