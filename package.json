@@ -83,6 +83,9 @@
     "verbose": true,
     "coveragePathIgnorePatterns": [
       "/node_modules/"
-    ]
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less)$": "<rootDir>/styleMock.js"
+    }
   }
 }
