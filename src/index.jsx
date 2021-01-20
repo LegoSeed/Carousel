@@ -1,5 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import axios from 'axios';
+import App from './App';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+function getItems(cb) {
+  axios.get('http://localhost:3001/items')
+    .then((items) => {
+      cb(items);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+ReactDOM.render(<App getItems={getItems} />, document.getElementById('app'));
