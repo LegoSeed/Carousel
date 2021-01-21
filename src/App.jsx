@@ -1,6 +1,12 @@
 import React from 'react';
 import './main.css';
+import styled from 'styled-components';
 import ProductList from './components/ProductList';
+
+const Title = styled.h1`
+font-family: Cera Pro,sans-serif;
+  font-size: 30px;
+  `;
 
 class App extends React.Component {
   constructor(props) {
@@ -20,7 +26,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Recommended products</h1>
+        <Title>
+          Recommended For You
+        </Title>
         <ProductList items={this.state.recommendedProducts} />
       </div>
     );
