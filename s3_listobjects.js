@@ -12,10 +12,10 @@ const LegoArray = [{
   imageUrl: 'https://chuck3774bucket.s3.us-east-2.amazonaws.com/vwBusResized.jpg', name: 'The VW Bus', reviewScore: 90, price: 50,
 },
 {
-  imageUrl: 'https://chuck3774bucket.s3.us-east-2.amazonaws.com/dragonAtGringottsResize2.jpg', name: 'The Dragon at Gringotts', reviewScore: 60, price: 60,
+  imageUrl: 'https://chuck3774bucket.s3.us-east-2.amazonaws.com/theCastleResize.jpg', name: 'Hogwarts Castle', reviewScore: 60, price: 60,
 },
 {
-  imageUrl: 'https://chuck3774bucket.s3.us-east-2.amazonaws.com/starWarsR.jpg', name: 'Mos Eisley Cantina', reviewScore: 70, price: 120,
+  imageUrl: 'https://chuck3774bucket.s3.us-east-2.amazonaws.com/MoseeislyResize.jpg', name: 'Mos Eisley Cantina', reviewScore: 70, price: 120,
 }, {
   imageUrl: 'https://chuck3774bucket.s3.us-east-2.amazonaws.com/pirateShipResize.jpg ', name: 'Pirate Adventures', reviewScore: 80, price: 100,
 }, {
