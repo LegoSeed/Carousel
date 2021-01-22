@@ -1,15 +1,18 @@
+/* eslint-disable react/jsx-no-bind */
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { Card, Button } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import StarRatingComponent from 'react-star-rating-component';
 import styled from 'styled-components';
 
-const StyledButton = styled(Button)`
+const StyledButton = styled.button`
 color: black;
 background-color: rgb(253, 128, 36);
 border-color: rgb(253, 128, 36);
 font-family: Cera Pro,sans-serif;
 width: 100%;
+height: 50px;
+border-radius: 5px;
 
 &:hover {
   background-color: white;
@@ -17,6 +20,8 @@ width: 100%;
   border-color: rgb(253, 128, 36);
   font-family: Cera Pro,sans-serif;
   width: 100%;
+  height: 50px;
+  border-radius: 5px;
 }
 `;
 
@@ -31,6 +36,7 @@ padding: 0 0 20px 0;
 `;
 
 const Product = (props) => (
+
   <StyledCard>
 
     <Card style={{ width: '22rem' }}>
@@ -40,6 +46,7 @@ const Product = (props) => (
         emptyStarColor="grey"
         starColor="blue"
         renderStarIcon={() => <span>♥</span>}
+        onStarClick={props.Clicked2}
       />
       <Card.Img variant="top" src={props.item.imageUrl} />
       <Card.Body>
@@ -57,11 +64,10 @@ const Product = (props) => (
           {props.item.price}
           .99
         </Card.Text>
-        <StyledButton variant="primary">Add to Bag</StyledButton>
+        <StyledButton variant="primary" onClick={() => (props.Clicked())}>Add to Bag</StyledButton>
       </Card.Body>
     </Card>
   </StyledCard>
-
 );
 
 export default Product;

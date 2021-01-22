@@ -1,3 +1,6 @@
+/* eslint-disable no-plusplus */
+/* eslint-disable react/jsx-no-bind */
+/* eslint-disable max-len */
 /* eslint-disable react/button-has-type */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable react/jsx-boolean-value */
@@ -8,6 +11,8 @@ import Carousel from 'react-multi-carousel';
 import styled from 'styled-components';
 import Product from './Product';
 import 'react-multi-carousel/lib/styles.css';
+import BagBanner from './BagBanner';
+import WishlistBanner from './WishlistBanner';
 
 const Button = styled.button`
 background: grey;
@@ -29,6 +34,12 @@ margin-top: 20px;
 const List = styled.li`
 width: 150px;
 `;
+
+const Title = styled.h1`
+margin-bottom: 15px;
+font-family: Cera Pro,sans-serif;
+  font-size: 30px;
+  `;
 
 const CustomDot = ({ active, onClick }) => (
   <List>
@@ -65,10 +76,13 @@ const responsive = {
 };
 
 const ProductList = (props) => (
-
   <div>
+    {props.wasClicked ? <BagBanner /> : ''}
+    {props.wasClicked2 ? <WishlistBanner /> : ''}
+    <Title>
+      Recommended For You
+    </Title>
     <Carousel
-      ss-container
       responsive={responsive}
       customDot={<CustomDot />}
       showDots
@@ -76,11 +90,9 @@ const ProductList = (props) => (
       partialVisbile
     >
       {
-    props.items.map((itemObj, i) => <Product item={itemObj} key={i} />)
+    props.items.map((itemObj, i) => <Product item={itemObj} key={i} Clicked={props.click} Clicked2={props.click2} />)
     }
     </Carousel>
   </div>
-
 );
-
 export default ProductList;
