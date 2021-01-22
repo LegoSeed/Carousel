@@ -2,9 +2,9 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import WishlistBanner from '../src/components/WishlistBanner';
 
-describe('Product component', () => {
+describe('WishListBanner component', () => {
   jest.useFakeTimers();
-  test('renders Product component', async (done) => {
+  test('renders WishListBanner component', async (done) => {
     // eslint-disable-next-line react/jsx-filename-extension
     const wrapper = await shallow(<WishlistBanner />);
 
