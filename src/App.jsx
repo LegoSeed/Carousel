@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable max-len */
 import React from 'react';
-import './main.css';
 import styled from 'styled-components';
 import ProductList from './components/ProductList';
 
