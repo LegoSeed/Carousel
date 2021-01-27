@@ -8,7 +8,7 @@ COPY . /src/app
 
 RUN yarn install
 
-EXPOSE 443
+EXPOSE 80
 
 CMD [ "npm", "run", "start" ]
 
