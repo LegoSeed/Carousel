@@ -74,8 +74,7 @@
       "src/**/*.jsx",
       "src/**/*.js",
       "!src/setupTest.js",
-      "!src/index.jsx",
-      "server/app.js"
+      "!src/index.jsx"
     ],
     "coverageReporters": [
       "text"
