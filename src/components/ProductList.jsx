@@ -8,56 +8,23 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import Carousel from 'react-multi-carousel';
-import styled from 'styled-components';
 import Product from './Product';
 import 'react-multi-carousel/lib/styles.css';
 import BagBanner from './BagBanner';
 import WishlistBanner from './WishlistBanner';
-
-const Button = styled.button`
-background: grey;
-width: 100%;
-height: 3px;
-border-width: 0;
-margin-top: 20px;
-
-
-`;
-const ActiveButton = styled.button`
-background: black;
-width: 100%;
-height: 3px;
-border-width: 0;
-margin-top: 20px;
-`;
-
-const List = styled.li`
-width: 150px;
-`;
-
-const Title = styled.h1`
-margin-bottom: 15px;
-font-family: Cera Pro,sans-serif;
-  font-size: 30px;
-  `;
+import '../style.css';
 
 const CustomDot = ({ active, onClick }) => (
-  <List>
-    {
-      active ? (
-        <ActiveButton onClick={() => onClick()} />
-      ) : (
-        <Button
-          onClick={() => onClick()}
-        />
-      )
-}
-  </List>
+  <li className="styled-list">
+    <button
+      className={`custom-dot ${active ? 'custom-dot--active' : ''}`}
+      onClick={() => onClick()}
+    />
+  </li>
 );
 
 const responsive = {
   superLargeDesktop: {
-    // the naming can be any, depends on you.
     breakpoint: { max: 4000, min: 3000 },
     items: 5,
   },
@@ -79,15 +46,16 @@ const ProductList = (props) => (
   <div>
     {props.wasClicked ? <BagBanner /> : ''}
     {props.wasClicked2 ? <WishlistBanner /> : ''}
-    <Title>
+    <h1 className="title">
       Recommended For You
-    </Title>
+    </h1>
     <Carousel
       responsive={responsive}
       customDot={<CustomDot />}
       showDots
       ssr
       partialVisbile
+      itemClass="image-item"
     >
       {
     props.items.map((itemObj, i) => <Product item={itemObj} key={i} Clicked={props.click} Clicked2={props.click2} />)
