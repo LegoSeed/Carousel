@@ -8,12 +8,13 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import Carousel from 'react-multi-carousel';
+import styled from 'styled-components';
 import Product from './Product';
 import 'react-multi-carousel/lib/styles.css';
 import BagBanner from './BagBanner';
 import WishlistBanner from './WishlistBanner';
 
-const Button = window.styled.button`
+const Button = styled.button`
 background: grey;
 width: 100%;
 height: 3px;
@@ -22,7 +23,7 @@ margin-top: 20px;
 
 
 `;
-const ActiveButton = window.styled.button`
+const ActiveButton = styled.button`
 background: black;
 width: 100%;
 height: 3px;
@@ -30,11 +31,11 @@ border-width: 0;
 margin-top: 20px;
 `;
 
-const List = window.styled.li`
+const List = styled.li`
 width: 150px;
 `;
 
-const Title = window.styled.h1`
+const Title = styled.h1`
 margin-bottom: 15px;
 font-family: Cera Pro,sans-serif;
   font-size: 30px;
