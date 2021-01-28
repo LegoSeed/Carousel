@@ -14,4 +14,4 @@ function getItems(cb) {
     });
 }
 
-ReactDOM.render(<App getItems={getItems} />, document.getElementById('app'));
+ReactDOM.render(<App getItems={getItems} />, document.getElementById('app2'));
