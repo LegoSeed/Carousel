@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import { Toast } from 'react-bootstrap';
 import 'react-multi-carousel/lib/styles.css';
 
-const MaxToast = window.styled(Toast)`
+const MaxToast = styled(Toast)`
 background-color: rgb(254, 245, 210);
 max-width: 1300px;
 text-align: center;
 border-color: rgb(253, 128, 36);
 `;
 
-const StyledImage = window.styled.img`
+const StyledImage = styled.img`
   width: 30px;
   height: 30px;
   margin-right: 10px;
