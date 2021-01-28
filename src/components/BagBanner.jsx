@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Toast } from 'react-bootstrap';
+import { Toast, Row } from 'react-bootstrap';
 import 'react-multi-carousel/lib/styles.css';
 
 const BagBanner = () => {
   const [show, setShow] = useState(true);
 
   return (
-    <div className="w-100">
+    <Row class="w-100">
       <Toast
         style={{
           backgroundColor: 'rgb(254, 245, 210)',
@@ -35,7 +35,7 @@ const BagBanner = () => {
         </Toast.Body>
       </Toast>
 
-    </div>
+    </Row>
 
   );
 };
