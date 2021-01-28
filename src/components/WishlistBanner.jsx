@@ -5,7 +5,7 @@ import 'react-multi-carousel/lib/styles.css';
 const WishlistBanner = () => {
   const [show, setShow] = useState(true);
   return (
-    <div>
+    <div className="w-100">
       <Toast
         style={{
           backgroundColor: 'rgb(254, 245, 210)',

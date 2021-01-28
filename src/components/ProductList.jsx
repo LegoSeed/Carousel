@@ -54,7 +54,7 @@ const ProductList = (props) => (
       customDot={<CustomDot />}
       showDots
       ssr
-      partialVisbile
+      partialVisible
       itemClass="image-item"
     >
       {
