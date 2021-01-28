@@ -3,9 +3,8 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import StarRatingComponent from 'react-star-rating-component';
-import styled from 'styled-components';
 
-const StyledButton = styled.button`
+const StyledButton = window.styled.button`
 color: black;
 background-color: rgb(253, 128, 36);
 border-color: rgb(253, 128, 36);
@@ -25,13 +24,13 @@ border-radius: 5px;
 }
 `;
 
-const Wrapper = styled.div`
+const Wrapper = window.styled.div`
 &:hover {
   text-decoration: underline;
 }
 `;
 
-const StyledCard = styled.div`
+const StyledCard = window.styled.div`
 padding: 0 0 20px 0;
 `;
 
