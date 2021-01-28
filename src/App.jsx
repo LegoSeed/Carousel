@@ -1,13 +1,8 @@
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable max-len */
 import React from 'react';
-import styled from 'styled-components';
 import ProductList from './components/ProductList';
-
-const Buffer = styled.div`
-   margin-top: 40px;
-   margin-bottom: 40px;
-  `;
+import './style.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -37,9 +32,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Buffer>
+        <div className="buffer">
           <ProductList items={this.state.recommendedProducts} wasClicked={this.state.clicked} wasClicked2={this.state.clicked2} click={this.OnAddToBagClick.bind(this)} click2={this.OnAddToWishlistClick.bind(this)} />
-        </Buffer>
+        </div>
       </div>
     );
   }
