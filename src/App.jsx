@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable max-len */
 import React from 'react';
+import { Col } from 'react-bootstrap';
 import ProductList from './components/ProductList';
 import './style.css';
 
@@ -31,11 +32,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="buffer">
-          <ProductList items={this.state.recommendedProducts} wasClicked={this.state.clicked} wasClicked2={this.state.clicked2} click={this.OnAddToBagClick.bind(this)} click2={this.OnAddToWishlistClick.bind(this)} />
-        </div>
-      </div>
+      <Col class="col-12" className="buffer">
+        <ProductList items={this.state.recommendedProducts} wasClicked={this.state.clicked} wasClicked2={this.state.clicked2} click={this.OnAddToBagClick.bind(this)} click2={this.OnAddToWishlistClick.bind(this)} />
+
+      </Col>
     );
   }
 }
