@@ -1,10 +1,9 @@
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable max-len */
 import React from 'react';
-import styled from 'styled-components';
 import ProductList from './components/ProductList';
 
-const Buffer = styled.div`
+const Buffer = window.styled.div`
    margin-top: 40px;
    margin-bottom: 40px;
   `;
