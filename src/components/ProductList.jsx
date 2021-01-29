@@ -8,6 +8,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import Carousel from 'react-multi-carousel';
+import { Row } from 'react-bootstrap';
 import Product from './Product';
 import 'react-multi-carousel/lib/styles.css';
 import BagBanner from './BagBanner';
@@ -44,23 +45,29 @@ const responsive = {
 
 const ProductList = (props) => (
   <div>
-    {props.wasClicked ? <BagBanner /> : ''}
-    {props.wasClicked2 ? <WishlistBanner /> : ''}
-    <h1 className="title">
-      Recommended For You
-    </h1>
-    <Carousel
-      responsive={responsive}
-      customDot={<CustomDot />}
-      showDots
-      ssr
-      partialVisible
-      itemClass="image-item"
-    >
-      {
+    <Row>
+      {props.wasClicked ? <BagBanner /> : ''}
+      {props.wasClicked2 ? <WishlistBanner /> : ''}
+
+    </Row>
+    <Row>
+
+      <h1 className="title">
+        Recommended For You
+      </h1>
+      <Carousel
+        responsive={responsive}
+        customDot={<CustomDot />}
+        showDots
+        ssr
+        partialVisible
+        itemClass="image-item"
+      >
+        {
     props.items.map((itemObj, i) => <Product item={itemObj} key={i} Clicked={props.click} Clicked2={props.click2} />)
     }
-    </Carousel>
+      </Carousel>
+    </Row>
   </div>
 );
 export default ProductList;
