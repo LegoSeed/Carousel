@@ -5,7 +5,7 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function getItems(cb) {
-  axios.get('http://18.224.37.182/items')
+  axios.get('http://18.224.37.182:3001/items')
     .then((items) => {
       cb(items);
     })
