@@ -59,3 +59,6 @@ li {
       margin-bottom: 40px;
     }
 
+    .toast {
+      width: 100vw !important;
+    }
