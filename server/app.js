@@ -1,9 +1,11 @@
+const compression = require('compression');
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const Item = require('../database.js');
 
 const app = express();
+app.use(compression());
 app.use(cors());
 
 app.get('/items', (req, res) => {
