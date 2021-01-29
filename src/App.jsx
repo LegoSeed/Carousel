@@ -32,7 +32,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <Col class="col-12" className="buffer">
+      <Col xs={12} className="buffer">
         <ProductList items={this.state.recommendedProducts} wasClicked={this.state.clicked} wasClicked2={this.state.clicked2} click={this.OnAddToBagClick.bind(this)} click2={this.OnAddToWishlistClick.bind(this)} />
 
       </Col>
