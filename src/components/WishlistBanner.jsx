@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Toast, Row } from 'react-bootstrap';
+import { Toast } from 'react-bootstrap';
 import 'react-multi-carousel/lib/styles.css';
 
 const WishlistBanner = () => {
   const [show, setShow] = useState(true);
   return (
-    <Row class="w-100">
+    <div>
       <Toast
         style={{
           backgroundColor: 'rgb(254, 245, 210)',
@@ -34,7 +34,7 @@ const WishlistBanner = () => {
         </Toast.Body>
       </Toast>
 
-    </Row>
+    </div>
 
   );
 };
