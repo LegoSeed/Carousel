@@ -45,7 +45,7 @@ const responsive = {
 
 const ProductList = (props) => (
   <div>
-    <Row>
+    <Row class="d-flex">
       {props.wasClicked ? <BagBanner /> : ''}
       {props.wasClicked2 ? <WishlistBanner /> : ''}
 
