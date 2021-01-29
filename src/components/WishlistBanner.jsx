@@ -9,7 +9,7 @@ const WishlistBanner = () => {
       <Toast
         style={{
           backgroundColor: 'rgb(254, 245, 210)',
-          maxWidth: '100%',
+          maxWidth: '100vw',
           textAlign: 'center',
           borderColor: 'rgb(253, 128, 36)',
         }}
