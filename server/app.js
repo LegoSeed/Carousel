@@ -8,7 +8,11 @@ const app = express();
 app.use(compression());
 app.use(cors());
 
-app.get('/items', (req, res) => {
+const corsOptions = {
+  maxAge: 31536000,
+};
+
+app.get('/items', cors(corsOptions), (req, res) => {
   Item.find({}).limit(8)
     .then((products) => {
       res.status(200).json(products);
