@@ -1,12 +1,10 @@
 version: '3'
-
 services:
-  server:
-    build: ./
-    depends_on:
-      - 'database'
+  app: 
+    container_name: LegoSeed-SDC-Carousel
+    restart: always
+    build: . 
     ports:
       - '3001:3001'
-
-  database:
-    image: mongo:latest
+volumes:
+  test:

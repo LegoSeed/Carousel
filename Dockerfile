@@ -1,12 +1,16 @@
 FROM node:latest
 
-RUN mkdir -p /src/app
+ENV NODE_ENV=production
 
-WORKDIR /src/app
+RUN mkdir -p /app
 
-COPY . /src/app
+WORKDIR /app
 
-RUN yarn install
+COPY package*.json ./ 
+
+RUN npm install --production
+
+COPY . .
 
 EXPOSE 3001
 

@@ -16,7 +16,7 @@ class App extends React.Component {
   }
 
   onComplete(items) {
-    this.setState({ recommendedProducts: items.data });
+    this.setState({ recommendedProducts: items.data.rows });
   }
 
   OnAddToBagClick() {
