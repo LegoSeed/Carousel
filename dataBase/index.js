@@ -1,8 +1,12 @@
 const { Pool, Client } = require('pg');
-const connectionLocation = "postgres://54.183.190.164:5432/sdc"
+const connectionLocation = "postgres://13.57.223.34:5432/sdc"
 
 const db = new Client({
-  connectionString: connectionLocation,
+  user: 'postgres',
+  host: '13.57.223.34',
+  database: 'sdc',
+  password: '',
+  port: 5432,
 });
 
 db.connect()

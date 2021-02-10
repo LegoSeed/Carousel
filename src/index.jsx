@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function getItems(cb) {
   axios.get('/carousel')
     .then((items) => {
+      console.log(items);
       cb(items);
     })
     .catch((error) => {
