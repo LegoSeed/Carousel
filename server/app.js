@@ -13,11 +13,10 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 const PORT = 3001;
 
 app.get('/carousel', (req, res) => {
-  console.log(req.body);
-  const values = req.body.name;
-  db.query("SELECT * FROM products WHERE name = $1", [values], (err, data) => {
+  console.log('request');
+  db.query("SELECT * FROM products LIMIT 8", (err, data) => {
     if (err) {
-      console.log('error');
+      console.log(err);
       res.status(400);
     } else {
       console.log('yes');

@@ -5,7 +5,7 @@
   "main": "./public/bundle.js",
   "scripts": {
     "lint": "./node_modules/.bin/eslint . --ignore-path ./.eslintignore",
-    "start": "nodemon server/app.js",
+    "start": "node server/app.js",
     "build": "webpack",
     "watch": "webpack -w",
     "test": "jest",

@@ -5,8 +5,9 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function getItems(cb) {
-  axios.get('http://18.224.136.166:3001/items')
+  axios.get('/carousel')
     .then((items) => {
+      console.log(items);
       cb(items);
     })
     .catch((error) => {
